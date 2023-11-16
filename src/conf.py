@@ -8,14 +8,7 @@
 
 import sys
 import os
-import importlib 
-# sys.path.insert(0, os.path.abspath(os.getenv('PYRAYA_PATH')+"/src"))
 sys.path.append(os.path.abspath("./_ext"))
-PYRAYA_PATH=str(os.getenv('PYRAYA_PATH'))+'/src'
-print('PYRAYA_PATH:', PYRAYA_PATH)
-sys.path.append(PYRAYA_PATH)
-print('Updated sys.path:', sys.path)
-importlib.import_module('raya') 
 
 project = 'Raya Documentation'
 copyright = '2023, Unlimited Robotics'
@@ -37,7 +30,12 @@ autodoc_typehints = "description"
 templates_path = ['_templates']
 exclude_patterns = ['Thumbs.db', '.DS_Store', 'api/src.rst']
 
-
+html_context = {
+  'display_github': True,
+  'github_user': 'Unlimited-Robotics',
+  'github_repo': 'raya_documentation',
+  'github_version': 'main'
+}
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

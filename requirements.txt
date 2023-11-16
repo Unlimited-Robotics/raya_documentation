@@ -1,6 +1,0 @@
-# First install sphinx
-# sudo apt-get install python3-sphinx
-sphinx
-sphinx-copybutton
-sphinx-rtd-theme
-myst-parser

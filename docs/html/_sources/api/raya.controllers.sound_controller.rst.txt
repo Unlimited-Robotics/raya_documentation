@@ -1,7 +1,0 @@
-Sound Controller
-=================
-.. automodule:: raya.controllers.sound_controller
-   :members:
-   :undoc-members:
-
-.. helloworld::

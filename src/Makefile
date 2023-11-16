@@ -5,15 +5,15 @@
 # from the environment for the first two.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = src
-BUILDDIR      = docs
+SOURCEDIR     = .
+BUILDDIR      = ../docs
 
 # API docstring options
 SPHINX_APIDOC_OPTIONS ?= members,undoc-members
 export SPHINX_APIDOC_OPTIONS
 
 # Python RaYa library path
-PYRAYA_PATH = $(HOME)/ur_dev/pyraya
+PYRAYA_PATH = /pyraya
 export PYRAYA_PATH
 
 # Put it first so that "make" without argument is like "make help".
@@ -31,3 +31,4 @@ buildapi:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	chown 1000:1000 -R /raya_documentation/docs
