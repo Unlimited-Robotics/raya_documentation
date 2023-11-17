@@ -5,6 +5,7 @@ PYRAYA_PATH=$HOME/ur_dev/pyraya
 VOLUMES=(
     -v $PYRAYA_PATH:/pyraya
     -v $(pwd)/src:/raya_documentation/src:ro
+    -v $(pwd)/src/api:/raya_documentation/src/api
     -v $(pwd)/docs:/raya_documentation/docs
 )
 
