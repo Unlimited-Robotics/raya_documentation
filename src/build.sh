@@ -5,6 +5,8 @@ apt-get update && \
     apt-get install -y --no-install-recommends \
     python3-pip
 
+python3 -m pip install --upgrade pip
+
 /usr/bin/python3 -m pip install \
     docutils==0.18.1 \
     sphinx==7.1.2 \
