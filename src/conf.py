@@ -37,6 +37,12 @@ html_context = {
   'github_version': 'main'
 }
 
+html_sidebars = {
+    '**': [
+        'versioning.html',
+    ],
+}
+
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
