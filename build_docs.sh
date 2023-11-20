@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+DOCKER_IMAGE_TAG=${1:?"missing arg 1 for DOCKER_IMAGE_TAG"}
 PYRAYA_PATH=$HOME/ur_dev/pyraya
 
 VOLUMES=(
@@ -9,12 +11,11 @@ VOLUMES=(
     -v $(pwd)/docs:/raya_documentation/docs
 )
 
-#    -u $(id -u):$(id -g) \
 docker run -it \
     --rm \
     --name raya_documentation \
     -e USER_ID=$(id -u) \
     -e GROUP_ID=$(id -g) \
     "${VOLUMES[@]}" \
-    ros:galactic \
+    unlimitedrobotics/raya_os.sim_gpu.prod:$DOCKER_IMAGE_TAG \
     bash

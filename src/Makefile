@@ -12,21 +12,15 @@ BUILDDIR      = ../docs
 SPHINX_APIDOC_OPTIONS ?= members,undoc-members
 export SPHINX_APIDOC_OPTIONS
 
-# Python RaYa library path
-PYRAYA_PATH = /pyraya
-export PYRAYA_PATH
-
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 .PHONY: help Makefile
 
-# sphinx-apidoc -fMeET --templatedir=./src/_templates $(PYRAYA_PATH)/src/raya -o ./api
-# chown $(USER_ID):$(GROUP_ID) -R ./api
 buildapi:
 	sphinx-apidoc -fMeET --templatedir=./src/_templates ./test_module -o ./api
-	chown $(USER_ID):$(GROUP_ID) -R ./api
+	# chown $(USER_ID):$(GROUP_ID) -R ./api
 	@echo "Auto-generation of API documentation finished. " \
 			"The generated files are in 'api/'"
 
@@ -34,4 +28,4 @@ buildapi:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-	chown $USER_ID:$GROUP_ID -R /raya_documentation/docs
+	# chown $(USER_ID):$(GROUP_ID) -R "$(BUILDDIR)"

@@ -10,8 +10,6 @@ import sys
 import os
 import importlib.util
 sys.path.append(os.path.abspath("./_ext"))
-# sys.path.append("/pyraya/src")
-# import raya
 
 sys.path.insert(0, os.path.abspath("."))
 import test_module
@@ -24,7 +22,7 @@ release = '0.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.autodoc', 'myst_parser', 'raya_directives', 'sphinx_copybutton']
+extensions = ['sphinx.ext.autodoc', 'myst_parser', 'raya_directives', 'rst_video', 'sphinx_copybutton', 'notfound.extension']
 
 autodoc_default_options = {
     'members': True,
@@ -34,7 +32,7 @@ autodoc_typehints = "description"
 
 
 templates_path = ['_templates']
-exclude_patterns = ['Thumbs.db', '.DS_Store', 'api/src.rst']
+exclude_patterns = ['Thumbs.db', '.DS_Store', 'api/src.rst', 'doc/raya_python_library/controllers/folder_example_structure']
 
 html_context = {
   'display_github': True,

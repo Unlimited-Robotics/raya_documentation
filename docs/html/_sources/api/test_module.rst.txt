@@ -1,6 +1,0 @@
-test\_module package
-====================
-
-.. automodule:: test_module
-   :members:
-   :undoc-members:

@@ -20,3 +20,13 @@ python3 -m venv raya-documentation-venv
 source raya-documentation-venv/bin/activate
 pip install -r requirements.txt
 ```
+
+### Pandoc util
+
+Convert MD to RST with pandoc
+```bash
+sudo apt install pandoc
+
+# set columns to 100
+pandoc table.md --from markdown --columns=100 --to rst -s -o table.rst
+```

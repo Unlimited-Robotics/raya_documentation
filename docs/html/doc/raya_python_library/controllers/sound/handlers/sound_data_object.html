@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoundData Object &mdash; Raya Documentation 0.1 documentation</title>
+      <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Sound exceptions" href="../exceptions.html" />
+    <link rel="prev" title="Handlers" href="index.html" />
+    <link href="../../../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            Raya Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Ra-Ya Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../getting_started/index.html">Getting started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Ra-Ya Python Library</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">Controllers list</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">Sound Controller</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../leds/index.html">LED's Controller</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../robots/index.html">Robots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Raya Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">Ra-Ya Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Ra-Ya</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Controllers list</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Sound Controller</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Handlers</a></li>
+      <li class="breadcrumb-item active">SoundData Object</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/Unlimited-Robotics/raya_documentation/blob/maindoc/raya_python_library/controllers/sound/handlers/sound_data_object.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sounddata-object">
+<h1>SoundData Object<a class="headerlink" href="#sounddata-object" title="Link to this heading"></a></h1>
+<p>SoundData is a class that allows provide more information about the audio data that you want to play or that is recorded from the robot.</p>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<p>Data: Unsigned char array (0-255) containing the audio information.
+Channels: number of data channels.
+Sample rate: the number of samples taken per second.
+Sample format: for raw, information about bytes configuration (see Constants).
+Coding format: data format (MP3,WAV,PCM). PCM is used for raw.</p>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Link to this heading"></a></h2>
+<p>Raw format (PCM) allowed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SAMPLE_ALAW</span>
+<span class="n">SAMPLE_F32BE</span>
+<span class="n">SAMPLE_F32LE</span>
+<span class="n">SAMPLE_F64BE</span>
+<span class="n">SAMPLE_F64LE</span>
+<span class="n">SAMPLE_MULAW</span>
+<span class="n">SAMPLE_S16BE</span>
+<span class="n">SAMPLE_S16LE</span>
+<span class="n">SAMPLE_S24BE</span>
+<span class="n">SAMPLE_S24LE</span>
+<span class="n">SAMPLE_S32BE</span>
+<span class="n">SAMPLE_S32LE</span>
+<span class="n">SAMPLE_S8</span>
+<span class="n">SAMPLE_U16BE</span>
+<span class="n">SAMPLE_U16LE</span>
+<span class="n">SAMPLE_U24BE</span>
+<span class="n">SAMPLE_U24LE</span>
+<span class="n">SAMPLE_U32BE</span>
+<span class="n">SAMPLE_U32LE</span>
+<span class="n">SAMPLE_U8</span>
+<span class="n">SAMPLE_VIDC</span>
+</pre></div>
+</div>
+<p>Sample format by width (Used for PCM format)
+With the number of bytes used to represent a sample, it’s possible obtain the data format among the most common (SAMPLE_U8, SAMPLE_S16LE, SAMPLE_S24LE, SAMPLE_S32LE)</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sample_format</span> <span class="o">=</span> <span class="n">SAMPLE_FORMAT_BY_WIDTH</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># ( 2 bytes means 16 bits Signed little endian format )</span>
+<span class="n">Sample</span> <span class="n">width</span> <span class="n">by</span> <span class="nb">format</span> <span class="p">(</span><span class="n">Used</span> <span class="k">for</span> <span class="n">PCM</span> <span class="nb">format</span><span class="p">)</span>
+<span class="n">With</span> <span class="n">the</span> <span class="nb">format</span><span class="p">,</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">possible</span> <span class="n">to</span> <span class="n">obtain</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">bits</span> <span class="n">used</span> <span class="n">to</span> <span class="n">represent</span> <span class="n">a</span> <span class="n">sample</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>Example<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sample_width</span> <span class="o">=</span> <span class="n">SAMPLE_WIDTH_BY_FORMAT</span><span class="p">[</span><span class="n">SAMPLE_S32LE</span><span class="p">]</span> <span class="c1"># ( return 4 )</span>
+</pre></div>
+</div>
+</section>
+<section id="class-functions">
+<h2>Class functions<a class="headerlink" href="#class-functions" title="Link to this heading"></a></h2>
+<p>clearData()
+Clear stored values.</p>
+<p>getSampleWidth()
+int
+Returns the sample width based on the format.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Handlers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../exceptions.html" class="btn btn-neutral float-right" title="Sound exceptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Unlimited Robotics.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
