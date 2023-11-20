@@ -8,7 +8,13 @@
 
 import sys
 import os
+import importlib.util
 sys.path.append(os.path.abspath("./_ext"))
+# sys.path.append("/pyraya/src")
+# import raya
+
+sys.path.insert(0, os.path.abspath("."))
+import test_module
 
 project = 'Raya Documentation'
 copyright = '2023, Unlimited Robotics'
