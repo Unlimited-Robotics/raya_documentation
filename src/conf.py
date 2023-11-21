@@ -22,7 +22,14 @@ release = '0.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.autodoc', 'myst_parser', 'raya_directives', 'rst_video', 'sphinx_copybutton', 'notfound.extension', 'sphinx_search.extension']
+extensions = ['sphinx.ext.autodoc', 
+              'myst_parser', 
+              'raya_directives', 
+              'sphinx_copybutton', 
+              'notfound.extension', 
+              'sphinx_search.extension', 
+              'sphinx.ext.intersphinx', 
+              'sphinxcontrib.youtube']
 
 autodoc_default_options = {
     'members': True,
