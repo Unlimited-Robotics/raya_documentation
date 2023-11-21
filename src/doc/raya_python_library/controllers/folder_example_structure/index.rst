@@ -9,3 +9,4 @@
 .. Handlers <handlers/index>
 .. Exceptions <exceptions>
 .. Feedbacks <feedbacks>
+.. Enumerations <enumerations>

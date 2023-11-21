@@ -1,4 +1,4 @@
-LED;s Controller
+LED's Controller
 ================
 
 .. toctree::

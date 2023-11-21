@@ -1,2 +1,2 @@
-<NAME> exceptions
+<NAME> Exceptions
 ================
