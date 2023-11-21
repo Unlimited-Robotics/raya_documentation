@@ -109,7 +109,7 @@ html_theme_options = dict(
     logo_alt = "Raya Documentation",
     logo_height = 720,
     logo_width = 153,
-    logo_url = "/",
+    logo_url = "/raya_documentation",
     github_url = "https://github.com/Unlimited-Robotics/raya_documentation/tree/main/src/",
     footer_links = ",".join([
         "About Us|http://example.com/",
