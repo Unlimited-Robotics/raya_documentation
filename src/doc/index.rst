@@ -9,3 +9,4 @@ Information on specific functions, classes, and methods.
    Getting started <getting_started/index>
    Ra-Ya Python Library <raya_python_library/index>
    Robots <robots/index>
+   Example <example>

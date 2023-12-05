@@ -41,7 +41,7 @@ autodoc_typehints = "description"
 
 
 templates_path = ['_templates']
-exclude_patterns = ['Thumbs.db', '.DS_Store', 'api/src.rst', 'doc/raya_python_library/controllers/folder_example_structure']
+exclude_patterns = ['Thumbs.db', '.DS_Store', 'api/src.rst', 'doc/raya_python_library/controllers/folder_example_structure', 'pyraya']
 
 html_context = {
   'display_github': False,

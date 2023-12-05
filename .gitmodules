@@ -1,0 +1,3 @@
+[submodule "src/pyraya"]
+	path = src/pyraya
+	url = git@github.com:Unlimited-Robotics/raya_python_library.git
