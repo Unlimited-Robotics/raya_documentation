@@ -53,4 +53,4 @@ A list can be nested.
 
 Here is an external link to `Python <https://www.python.org/>`_.
 
-.. rayadocumentation:: /controllers/leds_controller.py get_colors
+.. rayadocumentationfunction:: /controllers/leds_controller.py get_colors
