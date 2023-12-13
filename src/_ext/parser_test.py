@@ -36,7 +36,10 @@ class RayaDocstringFunctionFormatter():
                                         for p in \
                                             re.split(":param\s+", \
                                                     docstring_parts)[1:]]]
-                self.params_list = [(p[0],p[1],p[2], 
+                self.params_list = [(p[0],p[1],p[2].split(", defaults to")[0]\
+                                    .replace(' ','') \
+                                    if len(p[2].split(", defaults to"))>1 \
+                                    else p[2], 
                                 p[2].split(", defaults to")[1].replace(' ','')
                                 if len(p[2].split(", defaults to"))>1 else '') 
                                 for p in params]
@@ -55,7 +58,7 @@ class RayaDocstringFunctionFormatter():
                                         re.split(":raises\s+", \
                                                 docstring_parts)[1:]]]
             except IndexError:
-                self.return_list = []
+                self.raises_list = []
             except:
                 raise Exception("Wrong exception format definition")
             
