@@ -3,4 +3,4 @@
 	url = git@github.com:Unlimited-Robotics/raya_python_library.git
 [submodule "src/sphinx-wagtail-theme"]
 	path = src/sphinx-wagtail-theme
-	url = https://github.com/Unlimited-Robotics/sphinx-wagtail-theme
+	url = git@github.com:Unlimited-Robotics/sphinx-wagtail-theme.git
