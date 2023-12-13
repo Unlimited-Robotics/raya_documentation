@@ -10,7 +10,10 @@ apt-get update && \
     sphinx==7.1.2 \
     sphinx-copybutton==0.5.2 \
     sphinx-rtd-theme==1.3.0 \
-    myst-parser==2.0.0
+    myst-parser==2.0.0 \
+
+/usr/bin/python3 -m pip install \
+    -e sphinx-wagtail-theme/.
 
 # Install PyRaya
 python3 -m pip install -e /pyraya

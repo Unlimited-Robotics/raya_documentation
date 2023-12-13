@@ -105,11 +105,11 @@ html_show_sourcelink = False
 html_theme_options = dict(
     project_name = "Raya Documentation",
     header_links = "Top 1|http://example.com/one, Top 2|http://example.com/two",
-    logo = "logo_white.png",
+    logo = "logo_bg_white.png",
+    logo_url = "https://www.unlimited-robotics.com/",
     logo_alt = "Raya Documentation",
     logo_height = 720,
     logo_width = 153,
-    # logo_url = "/raya_documentation",
     github_url = "https://github.com/Unlimited-Robotics/raya_documentation/tree/main/src/",
     footer_links = ",".join([
         "About Us|http://example.com/",
