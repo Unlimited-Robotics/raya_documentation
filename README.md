@@ -33,5 +33,9 @@ pandoc table.md --from markdown --columns=100 --to rst -s -o table.rst
 
 ## install sphinx theme
 ```bash
+
+git submodule update --init
+git submodule update --remote
+
 python3 -m pip install -e sphinx-wagtail-theme/.
 ```
