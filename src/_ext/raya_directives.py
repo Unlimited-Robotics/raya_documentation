@@ -40,7 +40,10 @@ class RayaDocstringFunctionFormatter():
                                         for p in \
                                             re.split(":param\s+", \
                                                     docstring_parts)[1:]]]
-                self.params_list = [(p[0],p[1],p[2], 
+                self.params_list = [(p[0],p[1],p[2].split(", defaults to")[0]\
+                                    .replace(' ','') \
+                                    if len(p[2].split(", defaults to"))>1 \
+                                    else p[2], 
                                 p[2].split(", defaults to")[1].replace(' ','')
                                 if len(p[2].split(", defaults to"))>1 else '') 
                                 for p in params]
@@ -59,7 +62,7 @@ class RayaDocstringFunctionFormatter():
                                         re.split(":raises\s+", \
                                                 docstring_parts)[1:]]]
             except IndexError:
-                self.return_list = []
+                self.raises_list = []
             except:
                 raise Exception("Wrong exception format definition")
             
@@ -73,7 +76,7 @@ class RayaDocstringFunctionFormatter():
                                         re.split(":return\s+", \
                                                 docstring_parts)[1:]]]
             except IndexError:
-                self.func_return = None
+                self.func_return = []
             except:
                 raise Exception("Wrong return format definition")
         except:
@@ -104,10 +107,10 @@ class RayaDirective(SphinxDirective):
         if not len(classes) > 1:
             classes.append(node.body)
         for class_ in classes:
-            m_list = [n for n in class_.body if isinstance(n, ast.FunctionDef)]
-            for method in m_list:
-                if method.name == fun_name:
-                    return ast.get_docstring(method)
+            m_list = [n for n in class_.body if isinstance(n, ast.FunctionDef) or isinstance(n, ast.AsyncFunctionDef)]
+            for method_ in m_list:
+                if method_.name == fun_name:
+                    return (ast.get_docstring(method_), class_.name)
 
 class RayaDocumentationFunction(RayaDirective):
     required_arguments  = 2
@@ -115,10 +118,44 @@ class RayaDocumentationFunction(RayaDirective):
 
     def run(self) -> list:
         rst = ""
-        docstring = self.get_func_docstring(self.arguments[0],self.arguments[1])
-        rayadoc = RayaDocstringFunctionFormatter(docstring)
-        print(rst)
-        print(docstring)
+        docstring, class_name = self.get_func_docstring(self.arguments[0],self.arguments[1])
+        title = re.sub(r"(\w)([A-Z])", r"\1 \2", docstring.split('\n')[0])
+        rayadoc = RayaDocstringFunctionFormatter(docstring[docstring.find('\n'):])
+        rst += f"{title}\n"
+        rst += f"{''.join('=' for l in title)}\n"
+        rst += f"\n{rayadoc.description}\n\n"
+        if len(rayadoc.params_list)>0:
+            rst += f"Arguments\n---------\n\n"
+            rst += ".. list-table::\n" "   :header-rows: 1\n\n"\
+                "   * - Name\n" "     - Type\n" "     - Default value\n"\
+                "     - Description\n"
+            for param in rayadoc.params_list:
+                rst += \
+                f"   * - {param[1]}\n"\
+                f"     - ``{param[0]}``\n" f"     - ``{param[3]}``\n" f"     - {param[2]}\n"
+        rst += "\n"
+        if len(rayadoc.func_return)>0:
+            rst += f"Return\n---------\n\n"
+            rst += ".. list-table::\n" "   :header-rows: 1\n\n"\
+                "   * - Type\n" "     - Description\n"
+            for returns in rayadoc.func_return:
+                rst += \
+                f"   * - ``{returns[0]}``\n"\
+                f"     - {returns[1]}\n"
+        else:
+            rst += f"No return\n------------\n\n"
+        rst += "\n"
+        if len(rayadoc.raises_list)>0:
+            rst += f"Exceptions\n---------\n\n"
+            rst += ".. list-table::\n" "   :header-rows: 1\n\n"\
+                "   * - Exception type\n" "     - Description\n"
+            for returns in rayadoc.func_return:
+                rst += \
+                f"   * - ``{returns[0]}``\n"\
+                f"     - {returns[1]}\n"
+        else:
+            rst += f"No return\n------------\n\n"
+        rst += "\n"
         return self.parse_rst(rst)
 
 def setup(app: object) -> dict:

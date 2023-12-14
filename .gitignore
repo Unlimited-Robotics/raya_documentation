@@ -1,3 +1,5 @@
 .vscode/
 raya-documentation-venv/
-/src/api/*
+src/api/*
+docs/doctrees/*
+docs/html/*

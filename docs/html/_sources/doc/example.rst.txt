@@ -53,4 +53,7 @@ A list can be nested.
 
 Here is an external link to `Python <https://www.python.org/>`_.
 
+.. rayadocumentationfunction:: /controllers/leds_controller.py get_groups
 .. rayadocumentationfunction:: /controllers/leds_controller.py get_colors
+.. rayadocumentationfunction:: /controllers/leds_controller.py get_animations
+.. rayadocumentationfunction:: /controllers/leds_controller.py get_max_speed

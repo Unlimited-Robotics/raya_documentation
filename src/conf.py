@@ -29,7 +29,8 @@ extensions = ['sphinx.ext.autodoc',
               'notfound.extension', 
               'sphinx_search.extension', 
               'sphinx.ext.intersphinx', 
-              'sphinxcontrib.youtube']
+              'sphinxcontrib.youtube',
+              'sphinx.ext.autosectionlabel']
 
 autodoc_default_options = {
     'members': True,
@@ -103,6 +104,7 @@ html_favicon = '_static/favicon.png'
 html_show_sourcelink = False
 # These are options specifically for the Wagtail Theme.
 html_theme_options = dict(
+    collapse_navigation = True,
     project_name = "Raya Documentation",
     header_links = "Top 1|http://example.com/one, Top 2|http://example.com/two",
     logo = "logo.png",
