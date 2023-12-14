@@ -107,7 +107,7 @@ class RayaDirective(SphinxDirective):
         if not len(classes) > 1:
             classes.append(node.body)
         for class_ in classes:
-            m_list = [n for n in class_.body if isinstance(n, ast.FunctionDef)]
+            m_list = [n for n in class_.body if isinstance(n, ast.FunctionDef) or isinstance(n, ast.AsyncFunctionDef)]
             for method_ in m_list:
                 if method_.name == fun_name:
                     return (ast.get_docstring(method_), class_.name)
@@ -119,19 +119,20 @@ class RayaDocumentationFunction(RayaDirective):
     def run(self) -> list:
         rst = ""
         docstring, class_name = self.get_func_docstring(self.arguments[0],self.arguments[1])
-        title = re.sub(r"(\w)([A-Z])", r"\1 \2", class_name)
-        rayadoc = RayaDocstringFunctionFormatter(docstring)
+        title = re.sub(r"(\w)([A-Z])", r"\1 \2", docstring.split('\n')[0])
+        rayadoc = RayaDocstringFunctionFormatter(docstring[docstring.find('\n'):])
         rst += f"{title}\n"
         rst += f"{''.join('=' for l in title)}\n"
         rst += f"\n{rayadoc.description}\n\n"
         if len(rayadoc.params_list)>0:
             rst += f"Arguments\n---------\n\n"
             rst += ".. list-table::\n" "   :header-rows: 1\n\n"\
-                "   * - Name\n" "     - Type\n" "     - Description\n"
+                "   * - Name\n" "     - Type\n" "     - Default value\n"\
+                "     - Description\n"
             for param in rayadoc.params_list:
                 rst += \
-                f"   * - {param[1] if param[3]=='' else param[1] + ' *def* `' + param[3] + '`'}\n"\
-                f"     - `{param[0]}`\n" f"     - {param[2]}\n"
+                f"   * - {param[1]}\n"\
+                f"     - ``{param[0]}``\n" f"     - ``{param[3]}``\n" f"     - {param[2]}\n"
         rst += "\n"
         if len(rayadoc.func_return)>0:
             rst += f"Return\n---------\n\n"
@@ -139,7 +140,7 @@ class RayaDocumentationFunction(RayaDirective):
                 "   * - Type\n" "     - Description\n"
             for returns in rayadoc.func_return:
                 rst += \
-                f"   * - `{returns[0]}`\n"\
+                f"   * - ``{returns[0]}``\n"\
                 f"     - {returns[1]}\n"
         else:
             rst += f"No return\n------------\n\n"
@@ -150,7 +151,7 @@ class RayaDocumentationFunction(RayaDirective):
                 "   * - Exception type\n" "     - Description\n"
             for returns in rayadoc.func_return:
                 rst += \
-                f"   * - `{returns[0]}`\n"\
+                f"   * - ``{returns[0]}``\n"\
                 f"     - {returns[1]}\n"
         else:
             rst += f"No return\n------------\n\n"
