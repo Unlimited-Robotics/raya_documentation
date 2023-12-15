@@ -1,6 +1,0 @@
-Gary
-====
-
-.. toctree::
-
-   Sensors <sensors>

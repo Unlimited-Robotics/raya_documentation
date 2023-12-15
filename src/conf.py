@@ -8,11 +8,7 @@
 
 import sys
 import os
-import importlib.util
 sys.path.append(os.path.abspath("./_ext"))
-
-# sys.path.insert(0, os.path.abspath("."))
-# import test_module
 
 project = 'Raya Documentation'
 copyright = '2023, Unlimited Robotics'
@@ -42,7 +38,7 @@ autodoc_typehints = "description"
 PYRAYA_PATH = os.path.abspath("./pyraya/src/raya")+'/'
 
 templates_path = ['_templates']
-exclude_patterns = ['Thumbs.db', '.DS_Store', 'api/src.rst', 'doc/raya_python_library/controllers/folder_example_structure', 'pyraya']
+exclude_patterns = ['Thumbs.db', '.DS_Store', 'api/src.rst', 'doc/raya_python_library/controllers/folder_example_structure', 'pyraya', 'sphinx-wagtail-theme']
 
 html_context = {
   'display_github': False,
@@ -50,12 +46,6 @@ html_context = {
   'github_repo': 'raya_documentation',
   'github_version': 'main'
 }
-
-# html_sidebars = {
-#     '**': [
-#         'versioning.html',
-#     ],
-# }
 
 # html_sidebars = {
 #     "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
@@ -70,36 +60,6 @@ html_static_path = ['_static']
 html_show_sphinx = False
 html_logo = "_static/logo.png"
 html_favicon = '_static/favicon.png'
-
-
-# # Material theme options (see theme.conf for more information)
-# html_theme_options = {
-
-#     # Set the name of the project to appear in the navigation.
-#     'nav_title': 'Raya Documentation',
-
-#     # Specify a base_url used to generate sitemap.xml. If not
-#     # specified, then no sitemap will be built.
-#     'base_url': 'https://unlimited-robotics.github.io/raya_documentation',
-
-#     # Set the color and the accent color
-#     'color_primary': 'blue',
-#     'color_accent': 'dark-blue',
-#     'html_minify': True,
-#     'css_minify': True,
-
-#     # Set the repo location to get a badge with stats
-#     'repo_url': 'https://github.com/Unlimited-Robotics/raya_documentation/',
-#     'repo_name': 'Raya Documentation',
-
-#     # Visible levels of the global TOC; -1 means unlimited
-#     'globaltoc_depth': 3,
-#     # If False, expand all TOC entries
-#     'globaltoc_collapse': False,
-#     # If True, show hidden TOC entries
-#     'globaltoc_includehidden': False,
-# }
-
 
 html_show_sourcelink = False
 # These are options specifically for the Wagtail Theme.
