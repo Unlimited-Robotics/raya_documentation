@@ -41,7 +41,6 @@ class RayaDocstringFunctionFormatter():
                                             re.split(":param\s+", \
                                                     docstring_parts)[1:]]]
                 self.params_list = [(p[0],p[1],p[2].split(", defaults to")[0]\
-                                    .replace(' ','') \
                                     if len(p[2].split(", defaults to"))>1 \
                                     else p[2], 
                                 p[2].split(", defaults to")[1].replace(' ','')
@@ -119,11 +118,11 @@ class RayaDocumentationFunction(RayaDirective):
     def run(self) -> list:
         rst = ""
         docstring, class_name = self.get_func_docstring(self.arguments[0],self.arguments[1])
-        title = re.sub(r"(\w)([A-Z])", r"\1 \2", docstring.split('\n')[0])
+        # title = re.sub(r"(\w)([A-Z])", r"\1 \2", docstring.split('\n')[0])
         rayadoc = RayaDocstringFunctionFormatter(docstring[docstring.find('\n'):])
-        rst += f"{''.join('=' for l in title)}\n"
-        rst += f"{title}\n"
-        rst += f"{''.join('=' for l in title)}\n"
+        # rst += f"{''.join('=' for l in title)}\n"
+        # rst += f"{title}\n"
+        # rst += f"{''.join('=' for l in title)}\n"
         rst += f"\n{rayadoc.description}\n\n"
         if len(rayadoc.params_list)>0:
             rst += f"Arguments\n---------\n\n"

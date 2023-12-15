@@ -1,1 +1,6 @@
+=============
+Get max speed
+=============
+
+
 .. rayadocumentationfunction:: /controllers/leds_controller.py get_max_speed

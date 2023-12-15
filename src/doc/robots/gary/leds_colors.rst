@@ -1,3 +1,7 @@
+==============
+List of Colors
+==============
+
 X11 colors list accepted by gary
 ================================
 

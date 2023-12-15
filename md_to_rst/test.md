@@ -1,89 +1,162 @@
-## Overview
-This section describes how to create a simple Ra-Ya app.
+## X11 colors list accepted by gary 
 
-We are going to create an application that is going to be executed on a real robot, For now we are going to test that everything is installed correctly with a Hello world example.
+### List of LEDs groups in Gary
 
-### Download or update the simulator
-The Ra-Ya SDK have a command to download the necesary files to run the simulation, open a terminal and execute:
+| Group Name | 
+| --- | 
+| head | 
+| chest | 
+| skirt | 
 
-```bash
-rayasdk update
-```
-The SDK will check if you have any version already on the system if not it will download it for you, if the update was ok the output should be:
+:::(Info)
+Gary accepts a color as a string hex value beginning with # (ex. #FFFFFF) rather than a color name.
+:::
 
-```bash
-SUCCESS: Raya_OS updated successfully
-SUCCESS: Everything is up to date
-```
+| Color | Hex | 
+| --- | --- |
+| ALICE_BLUE | #F0F8FF |
+| ANTIQUE_WHITE | #FAEBD7 |
+| AQUA | #00FFFF |
+| AQUAMARINE | #7FFFD4 |
+| AZURE | #F0FFFF |
+| BEIGE | #F5F5DC |
+| BISQUE | #FFE4C4 |
+| BLACK | #000000 |
+| BLANCHED_ALMOND | #FFEBCD |
+| BLUE | #0000FF |
+| BLUE_VIOLET | #8A2BE2 |
+| BROWN | #A52A2A |
+| BURLYWOOD | #DEB887 |
+| CADET_BLUE | #5F9EA0 |
+| CHARTREUSE | #7FFF00 |
+| CHOCOLATE | #D2691E |
+| CORAL | #FF7F50 |
+| CORNFLOWER_BLUE | #6495ED |
+| CORNSILK | #FFF8DC |
+| CRIMSON | #DC143C |
+| CYAN | #00FFFF |
+| DARK_BLUE | #00008B |
+| DARK_CYAN | #008B8B |
+| DARK_GOLDENROD | #B8860B |
+| DARK_GRAY | #A9A9A9 |
+| DARK_GREEN | #006400 |
+| DARK_KHAKI | #BDB76B |
+| DARK_MAGENTA | #8B008B |
+| DARK_OLIVE_GREEN | #556B2F |
+| DARK_ORANGE | #FF8C00 |
+| DARK_ORCHID | #9932CC |
+| DARK_RED | #8B0000 |
+| DARK_SALMON | #E9967A |
+| DARK_SEA_GREEN | #8FBC8F |
+| DARK_SLATE_BLUE | #483D8B |
+| DARK_SLATE_GRAY | #2F4F4F |
+| DARK_TURQUOISE | #00CED1 |
+| DARK_VIOLET | #9400D3 |
+| DEEP_PINK | #FF1493 |
+| DEEP_SKY_BLUE | #00BFFF |
+| DIM_GRAY | #696969 |
+| DODGER_BLUE | #1E90FF |
+| FIREBRICK | #B22222 |
+| FLORAL_WHITE | #FFFAF0 |
+| FOREST_GREEN | #228B22 |
+| FUCHSIA | #FF00FF |
+| GAINSBORO* | #DCDCDC |
+| GHOST_WHITE | #F8F8FF |
+| GOLD | #FFD700 |
+| GOLDENROD | #DAA520 |
+| GRAY | #BEBEBE |
+| WEB_GRAY | #808080 |
+| GREEN | #00FF00 |
+| WEB_GREEN | #008000 |
+| GREEN_YELLOW | #ADFF2F |
+| HONEYDEW | #F0FFF0 |
+| HOT_PINK | #FF69B4 |
+| INDIAN_RED | #CD5C5C |
+| INDIGO | #4B0082 |
+| IVORY | #FFFFF0 |
+| KHAKI | #F0E68C |
+| LAVENDER | #E6E6FA |
+| LAVENDER_BLUSH | #FFF0F5 |
+| LAWN_GREEN | #7CFC00 |
+| LEMON_CHIFFON | #FFFACD |
+| LIGHT_BLUE | #ADD8E6 |
+| LIGHT_CORAL | #F08080 |
+| LIGHT_CYAN | #E0FFFF |
+| LIGHT_GOLDENROD | #FAFAD2 |
+| LIGHT_GRAY | #D3D3D3 |
+| LIGHT_GREEN | #90EE90 |
+| LIGHT_PINK | #FFB6C1 |
+| LIGHT_SALMON | #FFA07A |
+| LIGHT_SEA_GREEN | #20B2AA |
+| LIGHT_SKY_BLUE | #87CEFA |
+| LIGHT_SLATE_GRAY | #778899 |
+| LIGHT_STEEL_BLUE | #B0C4DE |
+| LIGHT_YELLOW | #FFFFE0 |
+| LIME | #00FF00 |
+| LIME_GREEN | #32CD32 |
+| LINEN | #FAF0E6 |
+| MAGENTA | #FF00FF |
+| MAROON | #B03060 |
+| WEB_MAROON | #800000 |
+| MEDIUM_AQUAMARINE | #66CDAA |
+| MEDIUM_BLUE | #0000CD |
+| MEDIUM_ORCHID | #BA55D3 |
+| MEDIUM_PURPLE | #9370DB |
+| MEDIUM_SEA_GREEN | #3CB371 |
+| MEDIUM_SLATE_BLUE | #7B68EE |
+| MEDIUM_SPRING_GREEN | #00FA9A |
+| MEDIUM_TURQUOISE | #48D1CC |
+| MEDIUM_VIOLET_RED | #C71585 |
+| MIDNIGHT_BLUE | #191970 |
+| MINT_CREAM | #F5FFFA |
+| MISTY_ROSE | #FFE4E1 |
+| MOCCASIN | #FFE4B5 |
+| NAVAJO_WHITE | #FFDEAD |
+| NAVY_BLUE | #000080 |
+| OLD_LACE | #FDF5E6 |
+| OLIVE | #808000 |
+| OLIVE_DRAB | #6B8E23 |
+| ORANGE | #FFA500 |
+| ORANGE_RED | #FF4500 |
+| ORCHID | #DA70D6 |
+| PALE_GOLDENROD | #EEE8AA |
+| PALE_GREEN | #98FB98 |
+| PALE_TURQUOISE | #AFEEEE |
+| PALE_VIOLET_RED | #DB7093 |
+| PAPAYA_WHIP | #FFEFD5 |
+| PEACH_PUFF | #FFDAB9 |
+| PERU | #CD853F |
+| PINK | #FFC0CB |
+| PLUM | #DDA0DD |
+| POWDER_BLUE | #B0E0E6 |
+| PURPLE | #A020F0 |
+| WEB_PURPLE | #800080 |
+| REBECCA_PURPLE | #663399 |
+| RED | #FF0000 |
+| ROSY_BROWN | #BC8F8F |
+| ROYAL_BLUE | #4169E1 |
+| SADDLE_BROWN | #8B4513 |
+| SALMON | #FA8072 |
+| SANDY_BROWN | #F4A460 |
+| SEA_GREEN | #2E8B57 |
+| SEASHELL | #FFF5EE |
+| SIENNA | #A0522D |
+| SILVER | #C0C0C0 |
+| SKY_BLUE | #87CEEB |
+| SLATE_BLUE | #6A5ACD |
+| SLATE_GRAY | #708090 |
+| SNOW | #FFFAFA |
+| SPRING_GREEN | #00FF7F |
+| STEEL_BLUE | #4682B4 |
+| TAN | #D2B48C |
+| TEAL | #008080 |
+| THISTLE | #D8BFD8 |
+| TOMATO | #FF6347 |
+| TURQUOISE | #40E0D0 |
+| VIOLET | #EE82EE |
+| WHEAT | #F5DEB3 |
+| WHITE | #FFFFFF |
+| WHITE_SMOKE | #F5F5F5 |
+| YELLOW | #FFFF00 |
+| YELLOW_GREEN | #9ACD32 |
 
-### Open & activate the simulator
-Once the simulator is downloaded execute this command on a terminal:
-
-```bash
-rayasdk simulator
-```
-
-This command will execute the Ra-Ya OS locally on your system and will open the simulator, if is the first time that the simulator is being run it will ask you for a user, just follow the steps and log in, **DO NOT CLOSE THE TERMINAL THAT IS RUNNING THE SIMULATION**, if you do you will have to kill the Ra-Ya OS container and make sure that there is not a process running on the background.
-
-### Connecting to the simulation
-Open a new terminal and execute this:
-```bash
-rayasdk connect --simulator
-```
-
-The command can prompt you to do certain actions, Once that the connection is successfully you should see
-``` bash
-You have successfully connected to the simulator
-```
-
-The connection is only necesary the first time, just make sure that the Ra-Ya OS is running on your system.
-
-### Creating the app
-An Ra-Ya app need a structure in order to execute, The SDK will help you with this, open a terminal and execute:
-
-``` bash
-mkdir hello_world
-cd hello_world
-rayasdk init
-```
-
-Now you should see that the folder contains files and directories, open with any editor the file `app.py` inside the `src` directory, replace the content with the following code:
-
-```python
-from raya.application_base import RayaApplicationBase
-
-class RayaApplication(RayaApplicationBase):
-
-    async def setup(self):
-        # Create local attributes and variables
-        self.log.info(f'Hello from setup()')
-
-    async def loop(self):
-        # Loop
-        self.log.info('Hello world')
-        self.finish_app()
-
-    async def finish(self):
-        # Finishing instructions
-        self.log.warn(f'Hello from finish()')
-```
-
-### Run your app
-
-You just wrote your first Ra-Ya app. It's time to run it!
-
-Open a terminal and go to the project folder, and execute:
-``` bash
-rayasdk run
-```
-
-The app will be sync to the Ra-Ya OS and is going to be launched, you should see on the output this
-
-``` bash
-Syncing the app on the simulation...
-Launching app...
-(INFO)<RayaApp.app.hello_world> Hello from setup()
-(INFO)<RayaApp.app.hello_world> Hello world
-(WARNING)<RayaApp.app.hello_world> Hello from finish()
-```
-Congratulations you just executed an app.
