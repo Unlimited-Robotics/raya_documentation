@@ -121,6 +121,7 @@ class RayaDocumentationFunction(RayaDirective):
         docstring, class_name = self.get_func_docstring(self.arguments[0],self.arguments[1])
         title = re.sub(r"(\w)([A-Z])", r"\1 \2", docstring.split('\n')[0])
         rayadoc = RayaDocstringFunctionFormatter(docstring[docstring.find('\n'):])
+        rst += f"{''.join('=' for l in title)}\n"
         rst += f"{title}\n"
         rst += f"{''.join('=' for l in title)}\n"
         rst += f"\n{rayadoc.description}\n\n"
