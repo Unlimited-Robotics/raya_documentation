@@ -3,6 +3,6 @@ Asynchronous methods
 
 .. toctree::
     :maxdepth: 2
+    :glob:
 
-    Play sound <play_sound>
-    Record sound <record_sound>
+    *

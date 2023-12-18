@@ -47,6 +47,10 @@ html_context = {
   'github_version': 'main'
 }
 
+html_sidebars = {
+    "**": ["localtoc.html"]
+}
+
 # html_sidebars = {
 #     "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
 # }
@@ -64,7 +68,6 @@ html_favicon = '_static/favicon.png'
 html_show_sourcelink = False
 # These are options specifically for the Wagtail Theme.
 html_theme_options = dict(
-    collapse_navigation = True,
     project_name = "Raya Documentation",
     header_links = "Top 1|http://example.com/one, Top 2|http://example.com/two",
     logo = "logo.png",
