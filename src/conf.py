@@ -25,7 +25,8 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx_search.extension', 
               'sphinx.ext.intersphinx', 
               'sphinxcontrib.youtube',
-              'sphinx.ext.autosectionlabel']
+              'sphinx.ext.autosectionlabel',
+              'sphinx.ext.githubpages']
 
 autodoc_default_options = {
     'members': True,
