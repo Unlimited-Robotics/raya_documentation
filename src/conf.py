@@ -20,7 +20,6 @@ release = '0.1'
 
 extensions = ['sphinx.ext.autodoc', 
               'myst_parser', 
-              'raya_directives', 
               'sphinx_copybutton', 
               'notfound.extension', 
               'sphinx_search.extension', 

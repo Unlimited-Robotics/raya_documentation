@@ -60,8 +60,11 @@ Class functions
 ---------------
 
 clearData()
+-----------
+
 Clear stored values.
 
 getSampleWidth()
-int
-Returns the sample width based on the format.
+----------------
+
+``int`` Returns the sample width based on the format.
