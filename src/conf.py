@@ -34,10 +34,13 @@ autodoc_default_options = {
 autodoc_member_order = 'groupwise'
 autodoc_typehints = "description"
 
-PYRAYA_PATH = os.path.abspath("./pyraya/src/raya")+'/'
-
 templates_path = ['_templates']
-exclude_patterns = ['Thumbs.db', '.DS_Store', 'api/src.rst', 'doc/raya_python_library/controllers/folder_example_structure', 'pyraya', 'sphinx-wagtail-theme/node_modules']
+exclude_patterns = ['Thumbs.db', 
+                    '.DS_Store', 
+                    'api/src.rst', 
+                    'doc/raya_python_library/controllers/folder_example_structure', 
+                    '_build', 
+                    'sphinx-wagtail-theme/node_modules']
 
 html_context = {
   'display_github': False,
