@@ -53,9 +53,6 @@ html_context = {
 
 suppress_warnings = ['autosectionlabel.*']
 
-# html_sidebars = {
-#     "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
-# }
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -66,6 +63,10 @@ html_static_path = ['_static']
 html_show_sphinx = False
 html_logo = "_static/logo.png"
 html_favicon = '_static/favicon.png'
+
+# html_sidebars = {
+#     "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
+# }
 
 html_show_sourcelink = False
 # These are options specifically for the Wagtail Theme.
