@@ -21,7 +21,6 @@ release = '0.1'
 extensions = ['sphinx.ext.autodoc', 
               'myst_parser', 
               'sphinx_copybutton', 
-              'notfound.extension', 
               'sphinx_search.extension', 
               'sphinx.ext.intersphinx', 
               'sphinxcontrib.youtube',
