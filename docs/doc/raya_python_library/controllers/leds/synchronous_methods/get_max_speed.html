@@ -95,7 +95,19 @@
     <div class="px-xl-7 px-md-5 px-3 container-fluid">
         <div class="row">
             <aside class="col-12 col-lg-3 sidebar-container">
-                <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5 pr-lg-4"><div class="site-toc">
+                <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5 pr-lg-4">
+<div id="searchbox" class="searchbox mb-3 px-1" role="search">
+    <form id="search-form" action="../../../../../search.html" autocomplete="off" method="get" role="search">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text border-right-0 bg-white py-3 pl-3 pr-2"><span class="fas fa-search"></span></div>
+            </div>
+            <input class="form-control py-3 pr-3 pl-1 h-100 border-left-0" type="search" name="q" placeholder="Search documentation" aria-label="Search documentation" id="searchinput" />
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div><div class="site-toc">
     <nav class="toc mt-3" aria-label="Main menu">
         <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
@@ -108,16 +120,41 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Controllers list</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../sound/index.html">Sound</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../sound/asynchronous_methods/index.html">Asynchronous methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../sound/synchronous_methods/index.html">Synchronous methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../sound/handlers/index.html">Handlers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../sound/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../sound/asynchronous_methods/cancel_sound.html">Cancel Sound</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sound/asynchronous_methods/play_sound.html">Play Sound</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sound/asynchronous_methods/record_sound.html">Record sound</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../sound/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../sound/synchronous_methods/get_predefined_sounds.html">Get predefined sounds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sound/synchronous_methods/is_playing.html">Is Playing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sound/synchronous_methods/is_recording.html">Is Recording</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../sound/handlers/index.html">Handlers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../sound/handlers/sound_data_object.html">SoundData Object</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../sound/exceptions.html">Exceptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../sound/feedbacks.html">Feedbacks</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">LED's</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../asynchronous_methods/index.html">Asynchronous methods</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="index.html">Synchronous methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../asynchronous_methods/animation.html">Animation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../asynchronous_methods/set_color.html">Set color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../asynchronous_methods/turn_off_all.html">Turn off all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../asynchronous_methods/turn_off_group.html">Turn off group</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Synchronous methods</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="get_animations.html">Get animations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get_colors.html">Get colors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get_groups.html">Get groups</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Get max speed</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../feedbacks.html">Feedbacks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../enumerations.html">Enumerations</a></li>
@@ -136,10 +173,6 @@
 </li>
 </ul>
 </li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Test</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../example.html">This is a heading</a></li>
 </ul>
 
     </nav>

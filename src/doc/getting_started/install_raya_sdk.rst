@@ -21,8 +21,7 @@ The Ra-Ya SDK is currently compatible with the following operating systems:
 
 .. note::
     
-    *Linux compilation of Ra-Ya SDK is a completely static build, so it should work with most of the recent Linux distributions over anaconda virtual environments.
-
+    * Linux compilation of Ra-Ya SDK is a completely static build, so it should work with most of the recent Linux distributions over anaconda virtual environments.
 
 Requirements
 ------------

@@ -1,7 +1,6 @@
 Index
 =====
 
-
 .. toctree::
    :caption: Getting Started
    :maxdepth: 2
@@ -22,9 +21,3 @@ Index
    :maxdepth: 3
    
    doc/robots/index
-
-.. toctree::
-   :caption: Test
-   :maxdepth: 3
-   
-   doc/example

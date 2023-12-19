@@ -41,7 +41,8 @@ exclude_patterns = ['Thumbs.db',
                     'api/src.rst', 
                     'doc/raya_python_library/controllers/folder_example_structure', 
                     '_build', 
-                    'sphinx-wagtail-theme/node_modules']
+                    'sphinx-wagtail-theme/node_modules',
+                    'sphinx-wagtail-theme/SECURITY.md']
 
 html_context = {
   'display_github': False,
@@ -50,9 +51,7 @@ html_context = {
   'github_version': 'main'
 }
 
-html_sidebars = {
-    "**": ["localtoc.html"]
-}
+suppress_warnings = ['autosectionlabel.*']
 
 # html_sidebars = {
 #     "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
