@@ -3,6 +3,7 @@ raya-documentation-venv/
 src/api/*
 docs/doctrees/*
 docs/html/*
+docs/*
 **/__pycache__/*
 __pycache__/*
 src/_ext/__pycache__/*
